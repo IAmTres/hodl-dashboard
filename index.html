@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODL - AI Crypto Trading Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-container glass-effect">
+        <div class="container">
+            <div class="logo">HODL</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#performance">Performance</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="try-demo-btn">Try Demo</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    <span class="badge-text">Live Trading</span>
+                </div>
+                <h1>AI-Powered <span class="gradient-text">Crypto Trading</span></h1>
+                <p class="hero-subtitle">Trade smarter with real-time market analysis and AI-driven insights</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Active Trading</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0.1ms</span>
+                        <span class="stat-label">Latency</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="primary-btn">
+                        <span class="btn-icon">▶</span>
+                        Start Trading
+                    </button>
+                    <button class="secondary-btn">
+                        <span class="btn-icon">📊</span>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-graphic">
+                <div class="crypto-prices">
+                    <div class="price-ticker">
+                        <span class="crypto">BTC</span>
+                        <span class="price">$43,567.89</span>
+                        <span class="change positive">+2.45%</span>
+                    </div>
+                    <div class="price-ticker">
+                        <span class="crypto">ETH</span>
+                        <span class="price">$2,891.23</span>
+                        <span class="change positive">+1.87%</span>
+                    </div>
+                    <div class="price-ticker">
+                        <span class="crypto">SOL</span>
+                        <span class="price">$89.45</span>
+                        <span class="change negative">-0.52%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="performance-metrics">
+            <div class="metric-card">
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+                <div class="metrics-row">
+                    <div class="metric">
+                        <span class="metric-label">30-Day Return</span>
+                        <span class="metric-value" id="totalProfit">$302,139</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2>Powered by Advanced AI</h2>
+                <p>Experience the future of trading with our cutting-edge AI technology</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-glow"></div>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>AI-driven market predictions with 94% accuracy rate</p>
+                    <div class="feature-stat">
+                        <span class="stat-value">94%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-glow"></div>
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-Time Trading</h3>
+                    <p>Execute trades in milliseconds with smart order routing</p>
+                    <div class="feature-stat">
+                        <span class="stat-value">0.1ms</span>
+                        <span class="stat-label">Latency</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-glow"></div>
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Process millions of data points to gauge market sentiment</p>
+                    <div class="feature-stat">
+                        <span class="stat-value">1M+</span>
+                        <span class="stat-label">Data Points</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="performance-showcase" id="performance">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Performance</span>
+                <h2>Proven Track Record</h2>
+                <p>Our AI consistently outperforms traditional trading strategies</p>
+            </div>
+            <div class="performance-grid">
+                <div class="performance-card glass-effect">
+                    <div class="performance-chart">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                    <div class="performance-stats">
+                        <div class="stat">
+                            <span class="stat-value">+187%</span>
+                            <span class="stat-label">YTD Return</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">$2.1M</span>
+                            <span class="stat-label">Trading Volume</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="performance-content">
+                    <h3>Outperforming the Market</h3>
+                    <ul class="performance-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <strong>187% YTD Return</strong> vs 24% Market Average
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <strong>0.1ms Execution</strong> Speed for Optimal Entry
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <strong>24/7 Monitoring</strong> of Market Conditions
+                        </li>
+                    </ul>
+                    <button class="primary-btn">
+                        <span class="btn-icon">📈</span>
+                        View Full Performance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2>Choose Your Trading Power</h2>
+                <p>Start with our free plan or upgrade for advanced AI features</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card starter">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for exploring crypto trading</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Real-time market data
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Basic trading tools
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Portfolio tracking
+                        </li>
+                    </ul>
+                    <button class="secondary-btn">Start Free</button>
+                </div>
+                
+                <div class="pricing-card pro">
+                    <div class="card-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">49</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Advanced features for serious traders</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Everything in Starter
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            AI-powered predictions
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Advanced analytics
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Priority support
+                        </li>
+                    </ul>
+                    <button class="primary-btn">Start 7-Day Trial</button>
+                </div>
+
+                <div class="pricing-card enterprise">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">199</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Full suite for professional traders</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Everything in Pro
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Custom AI models
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            API access
+                        </li>
+                        <li>
+                            <span class="feature-icon">✓</span>
+                            Dedicated account manager
+                        </li>
+                    </ul>
+                    <button class="secondary-btn">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Contact</span>
+                <h2>Get in Touch</h2>
+                <p>Have questions? Our team is here to help</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Get help anytime through our support portal</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Quick Start</h3>
+                        <p>Schedule a demo with our team</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Enterprise</h3>
+                        <p>Custom solutions for large organizations</p>
+                    </div>
+                </div>
+                <form class="contact-form glass-effect">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Topic</option>
+                            <option value="support">Technical Support</option>
+                            <option value="sales">Sales Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card glass-effect">
+                <div class="cta-content">
+                    <h2>Start Trading with AI Today</h2>
+                    <p>Join thousands of traders who are already leveraging our AI technology</p>
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="stat-value">10k+</span>
+                            <span class="stat-label">Active Traders</span>
+                        </div>
+                        <div class="cta-stat">
+                            <span class="stat-value">$500M+</span>
+                            <span class="stat-label">Monthly Volume</span>
+                        </div>
+                        <div class="cta-stat">
+                            <span class="stat-value">45+</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <button class="primary-btn">
+                            <span class="btn-icon">🚀</span>
+                            Start Free Trial
+                        </button>
+                        <button class="secondary-btn">
+                            <span class="btn-icon">💬</span>
+                            Schedule Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>HODL</h2>
+                    <p>AI-Powered Crypto Trading Platform</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-group">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#contact">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HODL. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.7/dist/countUp.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
